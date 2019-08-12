@@ -2,8 +2,8 @@
 Converts mouse ensembl/uniprot IDs to human ensembl/uniprot IDs
 
 Input:
-Tab delimited text file (with headers) where each row is a differentially expressed gene (mouse).
-One must contain a mouse Ensembl of Uniprot ID. The head name of this column is specified as an input variable.
+Tab delimited text file (with headers) where each row is a differentially expressed gene (mouse). One column
+ must contain a mouse Ensembl ID or a Uniprot ID. The header name of this column is specified as an input variable.
 
 ID conversion file in a tab delimited text format with headers. Only 1 ID per line for the input ID (long format).
 The ensembl ID headers should be 'Human Ensembl' and 'Mouse Ensembl'.
@@ -23,7 +23,7 @@ import sys
 
 # Variables
 input_f = "../Input_data/Pan_DEGs_lfc1.txt"
-inparanoid = "Inparanoid-Mus-hom-UniprotEnsembl-May2018.txt"
+inparanoid = "Inparanoid-Mus-hom-UniprotEnsembl-May2018-expanded.txt"
 output_f ="Pan_DEGs_lfc1_hum.txt"
 id_type = "ensembl" # "ensembl' or 'uniprot' : Used to get the right columns of the conversion file
 id_type_input = "ensembl" # "ensembl' or 'uniprot' : Used to get the right columns of the input file file
@@ -33,14 +33,14 @@ col_input = "target_id" # In the input file, what is the column header where the
 
 # Function to convert ID
 def conversion(conversion,input, mus):
-    '''
+    """
     Joins a dataframe with an ID conversion table, adding the ID conversion columns to the dataframe.
 
     :param conversion: pandas df with 2 column, first column is mouse id, second is human
     :param input: dataframe of input mouse ids to convert, where the ids are in the column labelled 'col_input'
     :param mus: name of mouse id column in convert file
     :return: Pandas df of mouse and human ids
-    '''
+    """
     # Left join the 2 dataframes by mouse id, put nan where no conversion
     output = input.merge(conversion, left_on=col_input, right_on=mus, how="left")
     return output
