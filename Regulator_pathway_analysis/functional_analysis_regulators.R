@@ -3,9 +3,9 @@
 #
 # Input: 1. Regulator-marker networks in tab delimited text files. One for Paneth and one for goblet datasets.
 #           The 'source' and 'target' column headers contain the source and target node ids respectively.
-#        2. Tab delimited text file (with headers) where each row is a differentially expressed gene (mouse).
-#           One column must contain a mouse Ensembl ID or a Uniprot ID. The header name of this column is specified
-#           as an input variable.
+#        2. ID conversion file in a tab delimited text format with headers. Only 1 ID per line for the input ID (long format).
+#           The ensembl ID headers should be 'Human Ensembl' and 'Mouse Ensembl'.
+#           The uniprot ID headers should be 'Human Uniprot' and 'Mouse Uniprot'.
 # Output: 1. Tab delimited text files with the significant Reactome pathways associated with specific lists of
 #            regulators: paneth all, paneth specific, goblet all, goblet specific, shared.
 #         2. PDF images of dot plot output from, KEGG and Reactome group analaysis of regulators split by specificity
