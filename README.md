@@ -1,12 +1,12 @@
 # Organoid regulatory networks
 
-This repository holds the code and necessary input files relating to the following paper. Specifically the code is used to carry out scripted analyses of differentially expressed genes. These gene lists were obtained from transcriptomics data of Paneth cell enriched, goblet cell enriched and conventionally differentiated enteroids:
+This repository holds the code and necessary input files relating to the following paper:
+ 
+ * Treveil A, Sudhakar P, Matthews Z J, Wrzesinski T, Jones E J, Brooks J, Olbei M, Hautefort I, Hall L J, Carding S R, Mayer U, Powell P P, Wileman T, Di Palma F, Haerty W, Korcsmáros T. Regulatory network analysis of Paneth cell and goblet cell enriched gut organoids using transcriptomics approaches. 
 
-* Treveil A, Sudhakar P, Matthews Z J, Wrzesinski T, Jones E J, Brooks J, Olbei M, Hautefort I, Hall L J, Carding S R, Mayer U, Powell P P, Wileman T, Di Palma F, Haerty W, Korcsmáros T. Regulatory network analysis of Paneth cell and goblet cell enriched gut organoids using transcriptomics approaches. 
+Specifically the contained code is used to carry out scripted analyses of differentially expressed genes using network approaches. These gene lists were obtained from transcriptomics data of Paneth cell enriched, goblet cell enriched and conventionally differentiated enteroids.
 
-This repository is organised into analysis stages which can be run separately from each other. For each stage, there is a directory containing the relevant scripts and all the necessary input files are given in the *Input_data/* directory. A description of each stage is given below. Please note that some manual/non-scripted analysis was carried out alongside these scripts, for example the analysis of most rewired regulators was carried out using a Cytoscape app called DyNet.
-
-All code is written in R or in Python (3).
+This repository is organised into analysis stages, which can be run separately from each other. For each stage, there is a directory containing the relevant scripts - details of which are outlined below.  All the necessary input files are given in the *Input_data/* directory. Please note that some manual/non-scripted analysis was carried out alongside these scripts, for example the analysis of most rewired regulators was carried out using a Cytoscape app called DyNet.
 
 ## Pathway analysis of differentially expressed genes
 
@@ -46,7 +46,7 @@ This stage takes the networks output by the *Generating regulatory networks* sta
 #### Output
 The output of the stage is two regulatory networks (one for each DEG dataset) in a tab delimited text format where each row represents an interaction. All target nodes are markers of the relevant cell type based on the markers from Haber el al. All nodes are DEGs in the relevant dataset.
 
-Additionally, the code creates heatplots (and associated datatables) indicating the regulator-marker interactions and the overlap of regulators between the Paneth cell and goblet cell datasets.
+Additionally, the code creates heatplots (and associated data tables) indicating the regulator-marker interactions and the overlap of regulators between the Paneth cell and goblet cell datasets.
 
 #### Code
 The code is found in the directory *Regulator_marker_network/*. The script *filter_network_target.py* should be run first.
@@ -57,14 +57,14 @@ This stage carries out pathway enrichment analysis on the regulators of the cell
 
 #### Output
 
-This script outputs tab delimited text files containing the significant Reactome pathways, PDF images of dot plot output from KEGG and Reactome analysis of regulators split by specificity. It will also output a text file with the human and mouse IDs for each regulator.
+This script outputs tab delimited text files containing the significant Reactome pathways and PDF images of dot plot output from KEGG and Reactome analysis of regulators split by specificity. It will also output a text file with the human and mouse IDs for each regulator.
 
 #### Code
 The code is found in the directory *Regulator_pathway_analysis/*.
 
 ## Pathway analysis of rewired regulators
 
-This stage: 
+This stage does the following: 
 
   a) takes a list of most rewired regulators (determined using Cytoscape app DyNet)
   
@@ -82,6 +82,8 @@ The code is found in the directory *Rewiring_pathway_analysis/*.
 
 This stage gets the number of Crohn's associated genes present in the DEG lists, the regulatory networks and the regulator-marker networks. It requires the output from the stages **Generating regulatory networks** and **Filtering networks for markers and their regulators**. I then calculates the hypergeometric significance statistic to determine the significance of the enrichment of Crohn's genes in the regulatory networks.
 
+The Crohn's associated genes are taken from the papers Jostins et al., 2012 and Farh et al., 2015.
+
 #### Output
 The script outputs tab delimited text files listing the Crohn's genes identified in the DEG lists/networks. It prints the results of the hypergeometric significance test.
 
@@ -97,3 +99,5 @@ All code in this repository was written and applied by Agatha Treveil in 2018/9 
 * The other authors of the paper and members of the Korcsmaros lab for their support and contributions to the project. Particularly to Padhmanand Sudhakar and Tomasz Wrezesinski for the collation of background interactions and analysis of raw sequencing data used in this repo.
 * DyNet - Goenawan IH, Bryan K and Lynn DJ, Bioinformatics, 2016
 * Marker data - Haber AL et al., Nature, 2017
+* Crohn's associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015.
+* Mouse-human ID conversion - InParanoid resource: O’Brien KP, Remm M and Sonnhammer ELL., Nucleic Acids Res. 2005.
