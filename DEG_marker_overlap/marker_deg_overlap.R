@@ -19,24 +19,24 @@ library(openxlsx)
 p_deg1_f <- "Pan_DEGs_lfc1.txt"
 g_deg1_f <- "Gob_DEGs_lfc1.txt"
 
-pan_mark_f <- "/All Markers - Haber/After Wald Filtering/PanethMarkers_Aviv.txt"
-gob_mark_f <- "/All Markers - Haber/After Wald Filtering/GobletMarkers_Aviv.txt"
-eec_mark_f <- "/All Markers - Haber/After Wald Filtering/EnteroendoMarkers_Aviv.txt"
-enteroc_mark_f <- "/All Markers - Haber/After Wald Filtering/EnterocyteMarkers_Aviv.txt"
-tuft_mark_f <-  "/All Markers - Haber/After Wald Filtering/TuftMarkers_Aviv.txt"
+pan_mark_f <- "PanethMarkers_Aviv.txt"
+gob_mark_f <- "GobletMarkers_Aviv.txt"
+eec_mark_f <- "EnteroendoMarkers_Aviv.txt"
+enteroc_mark_f <- "EnterocyteMarkers_Aviv.txt"
+tuft_mark_f <-  "TuftMarkers_Aviv.txt"
 
-pan_mark_hf <- "/High confidence Markers - Haber/After Wald Filtering/PanethMarkers_Aviv.txt"
-gob_mark_hf <- "/High confidence Markers - Haber/After Wald Filtering/GobletMarkers_Aviv.txt"
-eec_mark_hf <- "/High confidence Markers - Haber/After Wald Filtering/EnteroendoMarkers_Aviv.txt"
-enteroc_mark_hf <- "/High confidence Markers - Haber/After Wald Filtering/EnterocyteMarkers_Aviv.txt"
-tuft_mark_hf <-  "/High confidence Markers - Haber/After Wald Filtering/TuftMarkers_Aviv.txt"
+pan_mark_hf <- "PanethMarkers_Aviv.txt"
+gob_mark_hf <- "GobletMarkers_Aviv.txt"
+eec_mark_hf <- "EnteroendoMarkers_Aviv.txt"
+enteroc_mark_hf <- "EnterocyteMarkers_Aviv.txt"
+tuft_mark_hf <-  "TuftMarkers_Aviv.txt"
 
 # Output paths
-overlap_tab <- "/Marker-DEG-Overlap.txt"
-overlap_hyper <- "/Marker-DEG-Overlap-hyp.txt"
+overlap_tab <- "Marker-DEG-Overlap.txt"
+overlap_hyper <- "Marker-DEG-Overlap-hyp.txt"
 
 #Use wald file for background gene set (both wald goblet and paneth file share same genes, so only need to import 1)
-wald_f <-  "/wald_test_Paneth_vs_Control.with_gene_names.txt"
+wald_f <-  "wald_test_Paneth_vs_Control.with_gene_names.txt"
 
 ###### Load Input files ##########
 
