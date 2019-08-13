@@ -32,18 +32,18 @@ col_input = "target_id" # In the input file, what is the column header where the
 ##### Functions #####
 
 # Function to convert ID
-def conversion(conversion,input, mus):
+def conversion(conversion, mouse_input, mus):
     """
     Joins a dataframe with an ID conversion table, adding the ID conversion columns to the dataframe.
 
     :param conversion: pandas df with 2 column, first column is mouse id, second is human
-    :param input: dataframe of input mouse ids to convert, where the ids are in the column labelled 'col_input'
+    :param mouse_input: dataframe of input mouse ids to convert, where the ids are in the column labelled 'col_input'
     :param mus: name of mouse id column in convert file
     :return: Pandas df of mouse and human ids
     """
     # Left join the 2 dataframes by mouse id, put nan where no conversion
-    output = input.merge(conversion, left_on=col_input, right_on=mus, how="left")
-    return output
+    return mouse_input.merge(conversion, left_on=col_input, right_on=mus, how="left")
+
 
 
 ##### Import/Prep conversion file #####
@@ -55,6 +55,7 @@ elif id_type == "uniprot":
     hum = "Human Uniprot"
 else:
     sys.exit("Cannot determine the output id type.")
+
 if id_type_input == "ensembl":
     mus = 'Mouse Ensembl'
 elif id_type == "uniprot":
@@ -69,10 +70,10 @@ convert_f = convert[[mus,hum]]
 ##### Import/Prep id input file #####
 
 # Open input file
-input = pd.DataFrame.from_csv(input_f, sep="\t", index_col=None)
+mouse_input = pd.DataFrame.from_csv(input_f, sep="\t", index_col=None)
 
 # Run function to get id conversion
-output_id = conversion(convert_f, input, mus)
+output_id = conversion(convert_f, mouse_input, mus)
 
 # Save the output file : the input file with added column for human id
 output_id.to_csv(output_f, sep = "\t", quoting=None, index=False)
