@@ -13,7 +13,6 @@
 
 # Libraries
 library(dplyr)
-library(openxlsx)
 
 # Input paths
 p_deg1_f <- "Pan_DEGs_lfc1.txt"
