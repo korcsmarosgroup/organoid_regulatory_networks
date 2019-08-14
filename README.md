@@ -90,6 +90,23 @@ The script outputs tab delimited text files listing the Crohn's genes identified
 #### Code
 The code is found in the directory *crohns_genes_overlap/*.
 
+## Dependencies
+
+R (>= 3.4.0) with the following packages:
+* clusterProfiler (>= 3.4.0)
+* dendsort (>= 0.3.3)
+* dplyr (>= 3.2.0)
+* forcats (>= 0.4.0)
+* ggplot2 (>= 3.2.0)
+* grid (NA)
+* pheatmap (>= 1.0.12)
+* reactomePA (>= 1.28.0)
+* reshape2 (>= 1.4.3)
+* tidyr (>= 0.8.3)
+
+Python (>= 3) with the following packages:
+* Pandas (>= 0.24.2)
+
 ## Authors
 
 All code in this repository was written and applied by Agatha Treveil in 2018/9 - [agathat](https://https://github.com/agathat)
