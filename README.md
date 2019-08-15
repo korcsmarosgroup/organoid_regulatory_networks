@@ -60,7 +60,7 @@ This stage carries out pathway enrichment analysis on the regulators of the cell
 This script outputs tab delimited text files containing the significant Reactome pathways and PDF images of dot plot output from KEGG and Reactome analysis of regulators split by specificity. It will also output a text file with the human and mouse IDs for each regulator.
 
 #### Code
-The code is found in the directory *Regulator_pathway_analysis/*.
+The code is found in the directory *Regulator_pathway_analysis/*. 
 
 ## Pathway analysis of rewired regulators
 
