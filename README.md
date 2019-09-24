@@ -78,17 +78,17 @@ The script outputs a tab delimited text file with the results for the Reactome, 
 #### Code
 The code is found in the directory *Rewiring_pathway_analysis/*.
 
-## Analysis of Crohn's disease associated genes
+## Analysis of Crohn's disease and Ulcerative Colitis associated genes
 
-This stage gets the number of Crohn's associated genes present in the DEG lists, the regulatory networks and the regulator-marker networks. It requires the output from the stages **Generating regulatory networks** and **Filtering networks for markers and their regulators**. I then calculates the hypergeometric significance statistic to determine the significance of the enrichment of Crohn's genes in the regulatory networks.
+This stage gets the number of Crohn's / UC associated genes present in the DEG lists, the regulatory networks and the regulator-marker networks. It requires the output from the stages **Generating regulatory networks** and **Filtering networks for markers and their regulators**. I then calculates the hypergeometric significance statistic to determine the significance of the enrichment of Crohn's genes in the regulatory networks.
 
-The Crohn's associated genes are taken from the papers Jostins et al., 2012 and Farh et al., 2015.
+The Crohn's / UC associated genes are taken from the papers Jostins et al., 2012 and Farh et al., 2015.
 
 #### Output
-The script outputs tab delimited text files listing the Crohn's genes identified in the DEG lists/networks. It prints the results of the hypergeometric significance test.
+The script outputs tab delimited text files listing the Crohn's / UC genes identified in the DEG lists/networks. It prints the results of the hypergeometric significance test.
 
 #### Code
-The code is found in the directory *crohns_genes_overlap/*.
+The code is found in the directory *Crohns_uc_genes_overlap/*.
 
 ## Dependencies
 
@@ -116,5 +116,5 @@ All code in this repository was written and applied by Agatha Treveil in 2018/9 
 * The other authors of the paper and members of the Korcsmaros lab for their support and contributions to the project. Particularly to Padhmanand Sudhakar and Tomasz Wrezesinski for the collation of background interactions and analysis of raw sequencing data used in this repo.
 * DyNet - Goenawan IH, Bryan K and Lynn DJ, Bioinformatics, 2016
 * Marker data - Haber AL et al., Nature, 2017
-* Crohn's associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015.
+* Crohn's / UC associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015.
 * Mouse-human ID conversion - InParanoid resource: O’Brien KP, Remm M and Sonnhammer ELL., Nucleic Acids Res. 2005.
