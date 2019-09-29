@@ -29,6 +29,7 @@ The scripts output a table with the results of all the overlaps, as well as anot
 #### Code
 The code is found in the directory *DEG_marker_overlap/*. The script *marker_filtering_wald.R* should be run first.
 
+
 ## Generating regulatory networks
 
 This stage identifies possible regulatory connections between the DEGs in the Paneth and goblet conditions using an input set of interactions. These 'background' interactions were collated previously from open source databases as described in the manuscript (Treveil A, Regulatory network analysis of Paneth cell and goblet cell enriched gut organoids using transcriptomics approaches). 
@@ -38,6 +39,17 @@ The output of the stage is two regulatory networks (one for each DEG dataset) in
 
 #### Code
 The code is found in the directory *Creating_regulatory_networks/*.
+
+## Cluster analysis
+
+Here the nodes of network clusters are analysed for enriched pathway/functional associations. Prior to running this code, the Paneth and goblet networks are imported into Cytoscape and the MCode app is used to identify clusters of highly interconnected nodes using default settings. The results of this analysis are saved as text files named *Mcode_Paneth.txt* and *Mcode_Goblet.txt*.
+
+#### Output
+
+The script outputs a dataframe of enriched Reactome and KEGG pathways (q val <= 0.05) for each cluster in the input datasets, as well as heatplots saved as PDF files for the Reactome and KEGG results.
+
+#### Code
+The code is found in the directory *Cluster_analysis/*.
 
 ## Filtering networks for markers and their regulators
 
@@ -114,6 +126,8 @@ All code in this repository was written and applied by Agatha Treveil in 2018/9 
 ## Acknowledgments
 
 * The other authors of the paper and members of the Korcsmaros lab for their support and contributions to the project. Particularly to Padhmanand Sudhakar and Tomasz Wrezesinski for the collation of background interactions and analysis of raw sequencing data used in this repo.
+* Cytoscape - Shannon P et al., Genome Research, 2003
+* Mcode - Bader GD and Hogue CW, BMC Bioinformatics, 2003
 * DyNet - Goenawan IH, Bryan K and Lynn DJ, Bioinformatics, 2016
 * Marker data - Haber AL et al., Nature, 2017
 * Crohn's / UC associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015.
