@@ -9,7 +9,7 @@
 #           and 'target' containing the source an dtarget nodes.
 #        5. DEG networks in tab delimited text files. One for Paneth and one for goblet datasets.
 #           The 'source' and 'target' column headers contain the source and target node ids respectively.
-# Output: 1. Tab delimited text files saved with list of CD/UC/drug target genes in the DEGs files and the networks files.
+# Output: 1. Tab delimited text files saved with list of CD/UC/drug target genes in the networks files.
 #         2. Tab delimited text files saved with the same format as the input files (DEGs and networks files) but filtered for the CD/UC/drug target genes only. 
 #           Due to the small number of CD/UC/drug target genes these filtered networks are likely to be empty as every interaction must be between 2 CD/UC/drug target genes.
 #         3. The script prints the results of the hypergeometric significance test on the Paneth and goblet networks.

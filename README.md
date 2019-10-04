@@ -90,17 +90,25 @@ The script outputs a tab delimited text file with the results for the Reactome, 
 #### Code
 The code is found in the directory *Rewiring_pathway_analysis/*.
 
-## Analysis of Crohn's disease and Ulcerative Colitis associated genes
+## Analysis of Crohn's disease, ulcerative colitis and drug target associated genes
 
-This stage gets the number of Crohn's / UC associated genes present in the DEG lists, the regulatory networks and the regulator-marker networks. It requires the output from the stages **Generating regulatory networks** and **Filtering networks for markers and their regulators**. I then calculates the hypergeometric significance statistic to determine the significance of the enrichment of Crohn's genes in the regulatory networks.
+This stage overlaps gene lists of interest with the PCeE and GCeE networks. 
 
-The Crohn's / UC associated genes are taken from the papers Jostins et al., 2012 and Farh et al., 2015.
+The first stage, carried out with script *genes_of_interest_in_networks.R*, overlaps lists of genes with all nodes of the networks. The input lists are of SNP associated UC / CD genes, eQTL associated CD genes and drug target genes. Hypergeometric significance tests calculate the significance of genes of interest enrichment in the network. The script requires the output from the stage **Generating regulatory networks**.
+
+The second stage, carried out with the script *genes_in_master_targets.R*, overlaps lists of genes with targets of predicted master regulators in the networks. The input lists are of SNP associated UC / CD genes and a list of goblet cell differentially expressed genes associated with UC. Hypergeometric significance tests calculate the significance of genes of interest enrichment in the master regualtor targets. The script requires the output from the stage **Generating regulatory networks**.
+
+The CD / UC SNP associated genes are taken from the papers Jostins et al., 2012 and Farh et al., 2015. The CD eQTL genes are taken from Di Narzo et al., 2016 and the drug target genes from the DGIdb database (Cotto et al., 2018). The goblet cell UC differentially expressed genes were taken from the supplementary table 4 from Smillie et al., 2019 (inflammed UC vs healthy).
 
 #### Output
-The script outputs tab delimited text files listing the Crohn's / UC genes identified in the DEG lists/networks. It prints the results of the hypergeometric significance test.
+
+The first script outputs tab delimited text files saved with list of CD/UC/drug target genes in the networks files. Additionally, tab delimited text files  with the same format as the input files (networks files) but filtered for the CD/UC/drug target genes only. Finally, the script prints the results of the hypergeometric significance test on the Paneth and goblet networks.
+
+The second script outputs a tab delimited text file which gives in sentences, the results. It also outputs a list of all genes of interest targeted by at least one of the master regualtors in the network (as a text file).
+
 
 #### Code
-The code is found in the directory *Crohns_uc_genes_overlap/*.
+The code is found in the directory *Disease_relevance/*.
 
 ## Dependencies
 
@@ -130,5 +138,6 @@ All code in this repository was written and applied by Agatha Treveil in 2018/9 
 * Mcode - Bader GD and Hogue CW, BMC Bioinformatics, 2003
 * DyNet - Goenawan IH, Bryan K and Lynn DJ, Bioinformatics, 2016
 * Marker data - Haber AL et al., Nature, 2017
-* Crohn's / UC associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015.
+* Crohn's / UC associated gene lists - Jostins L et al., Nature. 2012 and Farh et al., Nature. 2015, Di Narzo et al., Clin Transl Gastroenterol. 2016, Smillie et al., Cell. 2019.
+* Drug target database - DGIdb, Cotto et al., Nucleic Acids Res. 2018.
 * Mouse-human ID conversion - InParanoid resource: O’Brien KP, Remm M and Sonnhammer ELL., Nucleic Acids Res. 2005.
