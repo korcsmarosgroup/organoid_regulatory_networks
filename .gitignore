@@ -1,3 +1,5 @@
 .idea/
 Pipeline.txt
 Script_renaming.txt
+*/.RData
+*/.RHistory

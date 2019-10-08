@@ -30,10 +30,10 @@ library(tidyr)
 #input_f <- "../Input_data/IBD_genes/All_CD_snps.txt"
 
 # Crohn's eQTL associated genes table
-#input_f <- "../Input_data/IBD_genes/All_CD_eqtls.txt"
+input_f <- "../Input_data/IBD_genes/All_CD_eqtls.txt"
 
 # Drug target associated genes table
-input_f <- "../Input_data/drug_target_genes.txt"
+#input_f <- "../Input_data/drug_target_genes.txt"
 
 # ID conversion file
 id_conversion_f <- "../Input_data/Inparanoid-Mus-homo-UniprotEnsembl-May2018-expanded.txt"
